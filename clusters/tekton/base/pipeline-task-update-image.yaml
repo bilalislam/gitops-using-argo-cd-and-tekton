@@ -1,0 +1,49 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  name: update-image
+spec:
+  workspaces:
+    - name: source
+  params:
+    - name: SERVICE_NAME
+      description: Name of the service which should be updated
+    - name: FILE_PATH
+      description: Path to the file which should be updated
+    - name: YAML_FIELD
+      description: YAML path which contains the image
+    - name: IMAGE
+      description: Image which should be used
+  steps:
+  - name: update-file
+    image: ubuntu
+    securityContext:
+      privileged: true
+    script: |
+      cd $(workspaces.source.path)/gitops-using-argo-cd-and-tekton/clusters/server/dev
+      rm server-deploy.yaml
+      echo " 
+          apiVersion: apps/v1
+          kind: Deployment
+          metadata:
+            name: server
+            namespace: server
+          spec:
+            template:
+              spec:
+                containers:
+                  - name: server
+                    image: $(params.IMAGE)
+          " > server-deploy.yaml
+  - name: git-push
+    image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.12.1
+    securityContext:
+      privileged: true
+    script: |
+      cd $(workspaces.source.path)/gitops-using-argo-cd-and-tekton
+      git config --global user.email "bilal.islam815@gmail.com"
+      git config --global user.name "bilalislam"
+      git add $(params.FILE_PATH)
+      MESSAGE="Automated commit by Tekton: $(params.SERVICE_NAME): $(params.IMAGE)"
+      git commit -m "$MESSAGE"
+      git push

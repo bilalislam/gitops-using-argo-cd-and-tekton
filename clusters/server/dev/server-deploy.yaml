@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+  namespace: server
+spec:
+  template:
+    spec:
+      containers:
+        - name: server
+          image: ninjafx/gitops-using-argo-cd-and-tekton:dev-0c16c6f2cd07abbb83df44bd21540737e810c37f
+
+    
