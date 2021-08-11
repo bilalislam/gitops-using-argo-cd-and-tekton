@@ -179,4 +179,16 @@ server-5b5c778558-2krtw   1/1     Running             0          8s
 
 We can also visit [server-dev.fake](http://server-dev.fake/) were we should see the greeting `Hello World`. When we change line 25 in the `cmd/server/server.go` file and merge our changes to the `dev` branch and rerun our pipeline, we should also see an updated greeting.
 
+## Result
+
+![tekton2](./assets/tekton2.png)
+
+![github](./assets/github.png)
+
+![argocd2](./assets/argocd2.png)
+
+![result](./assets/result.png)
+
+
+
 Instead of manually running our pipeline, we can also use [Tekton Triggers](https://github.com/tektoncd/triggers) in the future to run our pipeline on each commit to the `dev` and `main` branch.
