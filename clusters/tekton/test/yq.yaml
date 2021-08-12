@@ -23,8 +23,8 @@ spec:
       cd $(workspaces.source.path)/gitops-using-argo-cd-and-tekton/clusters/server/dev
       rm server-deploy.yaml
       echo " 
-          apiVersion: argoproj.io/v1alpha1
-          kind: Rollout
+          apiVersion: apps/v1
+          kind: Deployment
           metadata:
             name: server
             namespace: server
@@ -34,9 +34,6 @@ spec:
                 containers:
                   - name: server
                     image: $(params.IMAGE)
-            strategy:
-              blueGreen:
-                activeService: server
           " > server-deploy.yaml
   - name: git-push
     image: gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/git-init:v0.26.0
