@@ -192,3 +192,11 @@ We can also visit [server-dev.fake](http://server-dev.fake/) were we should see 
 
 
 Instead of manually running our pipeline, we can also use [Tekton Triggers](https://github.com/tektoncd/triggers) in the future to run our pipeline on each commit to the `dev` and `main` branch.
+
+
+# Disclaimer 
+
+### Why Cloud-Native CI/CD
+
+
+![cd-cd](./assets/ci-cd.png)
