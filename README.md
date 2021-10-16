@@ -196,7 +196,11 @@ Instead of manually running our pipeline, we can also use [Tekton Triggers](http
 
 # Disclaimer 
 
-### Why Cloud-Native CI/CD
 
+![automate](https://memegenerator.net/img/instances/68395319/automate-all-the-things.jpg)
+
+
+### Why Cloud-Native CI/CD ?
+ 
 
 ![cd-cd](./assets/ci-cd.png)
