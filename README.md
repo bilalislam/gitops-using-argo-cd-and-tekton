@@ -102,11 +102,11 @@ spec:
     name: build-and-deploy-pipeline
   params:
     - name: gitUrl
-      value: https://github.com/ricoberger/gitops-using-argo-cd-and-tekton
+      value: https://github.com/bilalislam/gitops-using-argo-cd-and-tekton
     - name: gitRevision
       value: dev
     - name: imageUrl
-      value: ricoberger/gitops-using-argo-cd-and-tekton
+      value: ninjafx/gitops-using-argo-cd-and-tekton
     - name: serviceName
       value: server
     - name: filePath
@@ -134,11 +134,11 @@ spec:
     name: build-and-deploy-pipeline
   params:
     - name: gitUrl
-      value: https://github.com/ricoberger/gitops-using-argo-cd-and-tekton
+      value: https://github.com/bilalislam/gitops-using-argo-cd-and-tekton
     - name: gitRevision
       value: main
     - name: imageUrl
-      value: ricoberger/gitops-using-argo-cd-and-tekton
+      value: ninjafx/gitops-using-argo-cd-and-tekton
     - name: serviceName
       value: server
     - name: filePath
