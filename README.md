@@ -4,13 +4,13 @@ This repository demonstrates a possible GitOps workflow using [Argo CD](https://
 
 ![GitOps](./assets/gitops.png)
 
-## install k8s cluster
+<!-- ## install k8s cluster
 In the first step we are creating a new Kubernetes cluster using Minikube and we enable the NGINX Ingress controller:
 
 ```sh
 minikube start --driver=virtualbox --cpus=4 --memory=8192m --profile=dev
 minikube addons enable ingress --profile=dev
-```
+``` -->
 
 ## install brew
 
@@ -20,7 +20,7 @@ $ brew install knative-sandbox/kn-plugins/admin
 $ brew install hey # loadtest
 ```
 
-## tunnel for loadbalancers
+## tunnel for loadbalancers and k8s cluster
 
 ```sh
 $ kn quickstart minikube
