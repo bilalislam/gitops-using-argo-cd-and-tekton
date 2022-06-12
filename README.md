@@ -43,8 +43,10 @@ In the next step we have to to install Argo CD by running the following command:
 ```sh
 kubectl create namespace argocd
 kustomize build clusters/argocd/dev | k apply -f -
-#kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
+<!-- 
+  kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml 
+-->
 
 ## monitoring
 ```sh
@@ -63,7 +65,6 @@ Note : May manually load from grafana dashboard
 
 ```sh
 $ https://github.com/argoproj/argo-cd/blob/master/examples/dashboard.json
-$ argocd git ssh pass : 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
 ```
 
 ## argo rollouts (if knative used then does not need it)
