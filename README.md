@@ -87,7 +87,9 @@ argocd-repo-server-5c76bd686b-79gjn              1/1     Running   0          3m
 argocd-server-67885bdcff-5q5cz                   1/1     Running   0          3m49s
 ```
 
-To deploy our manifests to the cluster we are using the **app of apps** pattern. For that we have to create a new `Application`, which manages all other applications (including Argo CD):
+To deploy our manifests to the cluster we are using the [app of apps pattern](https://medium.com/dzerolabs/turbocharge-argocd-with-app-of-apps-pattern-and-kustomized-helm-ea4993190e7c). For that we have to create a new `Application`, which manages all other applications (including Argo CD):
+
+
 
 ```sh
 kubectl apply -f clusters/apps/dev.yaml
