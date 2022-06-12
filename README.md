@@ -4,6 +4,14 @@ This repository demonstrates a possible GitOps workflow using [Argo CD](https://
 
 ![GitOps](./assets/gitops.png)
 
+## install k8s cluster
+In the first step we are creating a new Kubernetes cluster using Minikube and we enable the NGINX Ingress controller:
+
+```sh
+minikube start --driver=virtualbox --cpus=4 --memory=8192m --profile=dev
+minikube addons enable ingress --profile=dev
+```
+
 ## install brew
 
 ```sh
@@ -29,13 +37,6 @@ $ minikube dashboard --url --profile knative
 ```
 
 ## Argo CD
-
-In the first step we are creating a new Kubernetes cluster using Minikube and we enable the NGINX Ingress controller:
-
-```sh
-minikube start --driver=virtualbox --cpus=4 --memory=8192m --profile=dev
-minikube addons enable ingress --profile=dev
-```
 
 In the next step we have to to install Argo CD by running the following command:
 
